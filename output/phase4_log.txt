@@ -1,0 +1,30 @@
+TERRAIN CELLS (2 m cells), grid: 201 x 201
+  Cells with USGS ground points:  39915 (98.8%)
+  Cells with model ground points: 32715 (81.0%)
+  Cells USGS has but model lacks: 7252
+
+CELLS WHERE BOTH HAVE GROUND POINTS (no interpolation, model minus USGS)
+  cells: 32663  mean error: 0.37 m  MAE: 0.38 m  RMSE: 2.19 m
+  90th percentile abs error: 0.16 m  cells over 1 m: 3.7%  over 2 m: 3.3%
+
+FULL TERRAIN MODELS AFTER FILLING GAPS (model minus USGS)
+  cells: 40401  mean error: 0.58 m  MAE: 0.65 m  RMSE: 2.64 m
+  90th percentile abs error: 0.62 m  cells over 1 m: 8.3%  over 2 m: 6.4%
+
+ONLY CELLS WHERE THE MODEL HAD NO GROUND (filled by interpolation)
+  cells: 7252  mean error: 1.57 m  MAE: 1.88 m  RMSE: 4.15 m
+  90th percentile abs error: 6.72 m  cells over 1 m: 28.6%  over 2 m: 20.4%
+
+PREDICTED CLASSES 14 AND 15 SPLIT BY WHAT USGS SAYS
+  Class 14: 208552 points, 128484 are USGS ground (61.6%), 80068 are not
+    height of the non ground ones: p10 1.1  median 10.7  p90 19.2 m
+  Class 15: 18332 points, 0 are USGS ground (0.0%), 18332 are not
+    height of the non ground ones: p10 6.4  median 11.8  p90 19.1 m
+
+HOW BLOCK LIKE ARE THE MISSES (20 m blocks with at least 50 USGS ground points)
+  Blocks: 400
+  Ground recall under 0.2 (almost all missed): 4.5% of blocks
+  Ground recall between 0.2 and 0.8:           51.5% of blocks
+  Ground recall over 0.8 (mostly found):       44.0% of blocks
+
+Saved data/phase4_figure.png and output/phase4_metrics.csv

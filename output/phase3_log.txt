@@ -1,0 +1,32 @@
+Points are in the same order in both files.
+
+GROUND VS NON GROUND (reference = USGS labels)
+  Points compared: 771201
+  Ground found correctly (TP): 326536
+  Non ground called ground (FP): 29873
+  Ground the model missed (FN): 132175
+  Non ground called non ground (TN): 282617
+  Overall accuracy: 0.7899
+  Ground precision: 0.9162
+  Ground recall:    0.7119
+  Ground F1:        0.8012
+  IoU ground:       0.6683
+  IoU non ground:   0.6356
+  Mean IoU:         0.6520
+  Cohen kappa:      0.5857
+
+WHAT THE MODEL CALLED EACH REFERENCE CLASS (rows = USGS, columns = model class)
+                             1         2         5         6        14        15
+USGS unclassified          480     29873    170018     13719     80068     18332
+USGS ground                  0    326536      1757      1934    128484         0
+
+HEIGHT ABOVE LOCAL REFERENCE GROUND BY MODEL CLASS (metres, approximate)
+class                                 count     p10  median     p90
+1 Unclassified                          480     1.6     2.3     3.0
+2 Ground                             356409     0.0     0.2     0.6
+5 High vegetation                    171775     2.2    11.1    18.7
+6 Building                            15653     0.4     3.7    13.0
+14 Wire conductor (ASPRS 14)         208552     0.0     0.4    15.0
+15 Transmission tower (ASPRS 15)      18332     6.4    11.8    19.1
+
+Saved data/phase3_figure.png and output/phase3_metrics.csv

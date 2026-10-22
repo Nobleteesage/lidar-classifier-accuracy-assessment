@@ -1,0 +1,3 @@
+data/*.laz
+output/*.laz
+__pycache__/
